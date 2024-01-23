@@ -88,9 +88,9 @@ public static class Extensions
     /// <param name="x">The x-coordinate of the new position.</param>
     /// <param name="y">The y-coordinate of the new position.</param>
     /// <param name="z">The z-coordinate of the new position.</param>
-    public static void SetLocalPosition(this Transform transform, float x, float y, float z)
+    public static void SetLocalPosition(this Transform transform, float? x = null, float? y = null, float? z = null)
     {
-        transform.localPosition = new Vector3(x, y, z);
+        transform.localPosition = new Vector3(x ?? transform.position.x, y ?? transform.position.y, z ?? transform.position.z);
     }
     #endregion
 
